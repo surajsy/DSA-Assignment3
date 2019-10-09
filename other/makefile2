@@ -1,0 +1,17 @@
+test.out: main.o randGraph.o graphUtil2.o graphMain2.o queue.o
+	g++ -g main.o randGraph.o graphUtil2.o graphMain2.o queue.o -o test.out
+	
+main.o: main.c graph.h
+	gcc -g -c main.c
+	
+randGraph.o: randGraph.cpp
+	g++ -g -c randGraph.cpp
+	
+graphMain2.o: graphMain1.c graph.h graphUtil1.h
+	gcc -g -c graphMain1.c
+	
+graphUtil2.o: graphUtil1.c graphUtil1.h queue.h
+	gcc -g -c graphUtil1.c
+	
+queue.o: queue.c queue.h
+	gcc -g -c queue.c
